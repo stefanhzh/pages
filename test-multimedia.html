@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>多媒体演示</title>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ★★★ 改这里 ★★★
+     下面 <script type="text/markdown"> 区块里就是本文档的全部正文，
+     使用 Markdown 格式（和微信笔记/Notion 类似的纯文本写法）：
+       # 一级标题   ## 二级标题   **加粗**   - 列表   | 表格 |
+     用任何文本编辑器修改，保存后刷新浏览器即可看到效果。
+     不要删除本区块的开始和结束标签。
+     ═══════════════════════════════════════════════════════════ -->
+<script type="text/markdown" id="content">
+# 多媒体演示：图片 + 图表 + 表格
+
+这个页面演示 html-delivery 标准如何处理**多种格式**，同时保持单文件、可编辑、手机友好。
+
+## 一、正文引用图片
+
+下面这张图存在文件底部的"图片数据区"，正文里只有一行引用，编辑文字时完全不受图片编码干扰：
+
+![演示照片：base64 内嵌，离线可看](#img1)
+
+## 二、内联 SVG 图表
+
+<svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="收入对比条形图">
+  <style>.bar{fill:#0f6b8c}.lbl{font:13px sans-serif;fill:currentColor}</style>
+  <text class="lbl" x="10" y="30">公司A</text><rect class="bar" x="70" y="16" width="250" height="20" rx="4"/><text class="lbl" x="330" y="30">1250</text>
+  <text class="lbl" x="10" y="70">公司B</text><rect class="bar" x="70" y="56" width="178" height="20" rx="4"/><text class="lbl" x="258" y="70">890</text>
+  <text class="lbl" x="10" y="110">公司C</text><rect class="bar" x="70" y="96" width="96" height="20" rx="4"/><text class="lbl" x="176" y="110">480</text>
+  <text class="lbl" x="10" y="160" opacity="0.6">收入（百万美元）— 纯 SVG，深色模式自动适配文字颜色</text>
+</svg>
+
+## 三、表格（手机上自己滚动）
+
+| 指标 | 公司A | 公司B | 公司C |
+|------|------|------|------|
+| 收入 | 1250 | 890 | 480 |
+| 增速 | 18% | 7% | 25% |
+| 毛利率 | 42% | 35% | 51% |
+
+---
+
+**试试编辑**：用任何文本编辑器打开本文件，最上面"改这里"区块就是这些文字。改一句话、保存、刷新浏览器。
+</script>
+
+<!-- ═══════════════════════════════════════════
+     图片数据区（自动生成，一般不需要手动改）。
+     正文中用 ![说明](#img1) 引用下面的图片。
+     删除某张图：删掉正文里的引用行即可，这里可以不动。
+     ═══════════════════════════════════════════ -->
+<script type="application/json" id="images">
+{"img1": "data:image/png;base64,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N2f5g9ndaiSO/Tq767OJY4s3fNKl6dkR0aXp2eu274mIuWs39+nYIiL6dDxv3rotETHvpEmTjDqXntfo5j9Oebx/z6SkqJGe1qtd04joeE6DzZ9+HhHzE5f07nje/HVbSie9j58A8O1+RVj6LmhJlKSmJI+ZvWzxh5/E8W+NLtuy44npX/5u5N/Xbn6g96Xdn3yl7PIF63Pr164+ZUj/o4VFVVKTxy1cueirv6O4cH1u/drVJw/pX1BYVDU1+aWFK/9R0ZKF63O/X7v63xL3Kn9s+BuLh9+QOfSqi48VF/9qwuyIGDNryeiBWVe1b1b65xOlk1GJydDxMyPitwOufHLaovXb92zc+dmAi9sMm7F45E+yftr9gsKiol++Oisinpm1ZMTArKz2zUr/fCIixpab3Dd+pmcnwDcgqdZdwyt+oLILzM3Nzc3Nv0Nz/7MMAKc0IQRACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAFACAEQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgAQQgCEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEACEEAAh9CMAQAgBQAgB4NTzLwwuCPS6t6B5AAAAAElFTkSuQmCC"}
+</script>
+
+<!-- ═══ 以下是渲染代码，请勿改动 ═══ -->
+<style>
+:root{
+  --bg:#fdfdfc; --fg:#1a1a1a; --muted:#666; --accent:#0f6b8c;
+  --border:#e3e2de; --code-bg:#f2f1ee; --quote:#8a6d3b;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#191a1c; --fg:#e6e4df; --muted:#9a9a94; --accent:#6db6d4;
+         --border:#333; --code-bg:#26272a; --quote:#c9a86a; }
+}
+*{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+}
+main{ max-width:720px; margin:0 auto; padding:clamp(16px,4vw,40px); overflow-wrap:break-word; }
+h1{ font-size:clamp(1.5rem,5vw,2.1rem); line-height:1.3; margin:.5em 0; }
+h2{ font-size:clamp(1.25rem,4vw,1.5rem); line-height:1.35; margin:1.6em 0 .6em;
+    padding-bottom:.3em; border-bottom:1px solid var(--border); }
+h3{ font-size:clamp(1.1rem,3.5vw,1.2rem); margin:1.4em 0 .5em; }
+p{ margin:.8em 0; }
+a{ color:var(--accent); word-break:break-all; }
+hr{ border:none; border-top:1px solid var(--border); margin:2em 0; }
+blockquote{ margin:1em 0; padding:.2em 1em; border-left:3px solid var(--quote);
+            color:var(--muted); background:var(--code-bg); border-radius:0 6px 6px 0; }
+ul,ol{ padding-left:1.4em; margin:.8em 0; }
+li{ margin:.3em 0; }
+code{ background:var(--code-bg); padding:.15em .4em; border-radius:4px;
+      font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace; font-size:.9em; }
+pre{ background:var(--code-bg); padding:1em; border-radius:8px; overflow-x:auto; }
+pre code{ background:none; padding:0; }
+.tablewrap{ overflow-x:auto; margin:1em 0; -webkit-overflow-scrolling:touch; }
+table{ border-collapse:collapse; width:100%; min-width:320px; font-size:.95em; }
+th,td{ border:1px solid var(--border); padding:.5em .7em; text-align:left; vertical-align:top; }
+th{ background:var(--code-bg); }
+img,svg{ max-width:100%; height:auto; }
+strong{ font-weight:600; }
+.meta{ color:var(--muted); font-size:.85em; }
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+(function(){
+"use strict";
+var src = document.getElementById("content").textContent;
+var IMAGES = {};
+try { IMAGES = JSON.parse(document.getElementById("images").textContent || "{}"); } catch(e){}
+
+function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function inline(s){
+  s = esc(s);
+  s = s.replace(/`([^`]+)`/g, function(_,c){ return "<code>"+c+"</code>"; });
+  s = s.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, function(_,alt,ref){
+    var u = ref.charAt(0)==="#" ? (IMAGES[ref.slice(1)]||"") : ref;
+    if(!u) return '<span class="meta">[图片缺失: '+ref+']</span>';
+    return '<figure style="margin:1em 0"><img alt="'+alt+'" src="'+u+'">'+(alt?'<figcaption class="meta">'+alt+'</figcaption>':'')+'</figure>';
+  });
+  s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  s = s.replace(/(^|[^*\w])\*([^*\n]+)\*/g, "$1<em>$2</em>");
+  return s;
+}
+
+function render(md){
+  var lines = md.replace(/\r\n/g,"\n").split("\n");
+  var out = [], i = 0;
+  function isTableRow(l){ return /^\s*\|.*\|\s*$/.test(l); }
+  while(i < lines.length){
+    var l = lines[i];
+
+    if(/^\s*```/.test(l)){                      // code fence
+      var buf=[]; i++;
+      while(i<lines.length && !/^\s*```/.test(lines[i])){ buf.push(lines[i]); i++; }
+      i++;
+      out.push("<pre><code>"+esc(buf.join("\n"))+"</code></pre>");
+      continue;
+    }
+    if(/^\s*<\S/.test(l)){                      // raw HTML passthrough (e.g. inline SVG)
+      var buf=[l]; i++;
+      while(i<lines.length && lines[i].trim()!==""){ buf.push(lines[i]); i++; }
+      out.push(buf.join("\n"));
+      continue;
+    }
+    if(/^\s*(-{3,}|\*{3,})\s*$/.test(l)){ out.push("<hr>"); i++; continue; }
+    var h = l.match(/^(#{1,4})\s+(.*)/);
+    if(h){ var n=h[1].length; out.push("<h"+n+">"+inline(h[2])+"</h"+n+">"); i++; continue; }
+    if(/^\s*>\s?/.test(l)){                     // blockquote
+      var buf=[];
+      while(i<lines.length && /^\s*>\s?/.test(lines[i])){ buf.push(lines[i].replace(/^\s*>\s?/,"")); i++; }
+      out.push("<blockquote>"+render(buf.join("\n"))+"</blockquote>");
+      continue;
+    }
+    if(isTableRow(l) && i+1<lines.length && /^\s*\|[\s:|-]+\|\s*$/.test(lines[i+1])){  // table
+      var head = l, rows=[]; i+=2;
+      while(i<lines.length && isTableRow(lines[i])){ rows.push(lines[i]); i++; }
+      function cells(r){ return r.trim().replace(/^\||\|$/g,"").split("|").map(function(c){return inline(c.trim());}); }
+      var html = "<div class=tablewrap><table><thead><tr>";
+      cells(head).forEach(function(c){ html+="<th>"+c+"</th>"; });
+      html += "</tr></thead><tbody>";
+      rows.forEach(function(r){
+        html+="<tr>"; cells(r).forEach(function(c){ html+="<td>"+c+"</td>"; }); html+="</tr>";
+      });
+      out.push(html+"</tbody></table></div>");
+      continue;
+    }
+    var ulm = l.match(/^(\s*)[-*]\s+(.*)/), olm = l.match(/^(\s*)\d+[.)]\s+(.*)/);
+    if(ulm || olm){                             // list (supports one nesting level)
+      var tag = ulm ? "ul" : "ol";
+      var items=[];
+      var re = ulm ? /^(\s*)[-*]\s+(.*)/ : /^(\s*)\d+[.)]\s+(.*)/;
+      while(i<lines.length){
+        var m = lines[i].match(/^(\s*)([-*]|\d+[.)])\s+(.*)/);
+        if(!m) break;
+        items.push({indent:m[1].length, text:m[3]});
+        i++;
+      }
+      var html="<"+tag+">", depth=0;
+      items.forEach(function(it,idx){
+        var lvl = it.indent>=2 ? 1 : 0;
+        if(lvl>depth){ html+="<ul>"; depth=1; }
+        else if(lvl<depth){ html+="</ul>"; depth=0; }
+        html+="<li>"+inline(it.text)+"</li>";
+      });
+      if(depth>0) html+="</ul>";
+      out.push(html+"</"+tag+">");
+      continue;
+    }
+    if(l.trim()===""){ i++; continue; }
+    var buf=[l]; i++;                           // paragraph
+    while(i<lines.length && lines[i].trim()!=="" &&
+          !/^(#{1,4}\s|\s*[-*]\s|\s*\d+[.)]\s|\s*>|\s*```|\s*\|)/.test(lines[i])){
+      buf.push(lines[i]); i++;
+    }
+    out.push("<p>"+inline(buf.join(" "))+"</p>");
+  }
+  return out.join("\n");
+}
+
+document.getElementById("app").innerHTML = render(src);
+var h1 = document.querySelector("h1");
+if(h1 && document.title.indexOf("【")===0) document.title = h1.textContent;
+})();
+</script>
+</body>
+</html>
